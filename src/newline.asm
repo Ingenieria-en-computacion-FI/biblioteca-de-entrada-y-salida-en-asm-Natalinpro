@@ -8,8 +8,9 @@ newline:
     push ebp
     mov ebp, esp
 
-    ; TODO:
-    ; imprimir '\n'
+    ; implementacion 
+    mov al, 10    ;ascii salto de linea
+    call print_char 
 
     mov esp, ebp
     pop ebp
