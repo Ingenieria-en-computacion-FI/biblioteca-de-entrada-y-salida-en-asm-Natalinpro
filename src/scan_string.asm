@@ -13,10 +13,14 @@ scan_string:
     push ebp
     mov ebp, esp
 
-    ; TODO:
-    ; 1. syscall read
-    ; 2. guardar en buffer
-    ; 3. agregar terminador 0
+    ;implementacion 
+    mov eax, 3 ; syscall scan
+    mov ebx, 0 
+    mov ecx, char_buffer 
+    mov edx, 1 ; El tamaño del caracter
+    int 0x80 
+
+    mov al, [char_buffer] ; byte que se leyo a la parte mas baja 
 
     mov esp, ebp
     pop ebp
