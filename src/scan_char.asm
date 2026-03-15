@@ -20,13 +20,13 @@ scan_char:
     push ecx
     push edx
 
-    mov eax, 3
+    mov eax, 3    ; sys read
     mov ebx, 0
-    mov ecx, char_buffer
+    mov ecx, char_buffer ; buffer destino 
     mov edx, 1
     int 0x80
 
-    mov al, [char_buffer]
+    mov al, [char_buffer] ; devuelve el caracter leido en al
     
     pop edx
     pop ecx
